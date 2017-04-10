@@ -1,0 +1,1 @@
+# Zabbix-monitoring-API-SynologyHA
