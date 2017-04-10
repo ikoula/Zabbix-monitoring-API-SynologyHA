@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>2.0</version>
+    <date>2017-04-10T09:57:34Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>OS - Synology - HA passive server</template>
+            <name>OS - Synology - HA passive server</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <applications/>
+            <items>
+                <item>
+                    <name>Number of physical disks in normal status on passive syno HA</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>syno_monitor_rdisk_status_normal.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;]</key>
+                    <delay>600</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Récupère le nombre de disk en statut normal/OK</description>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Number of physical disks on passive syno HA</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>syno_monitor_rdisk_count.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;]</key>
+                    <delay>43200</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Récupère le nombre de disques physiques toutes les 12h</description>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Power status of passive (rnode) syno HA</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;]</key>
+                    <delay>43200</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Récupère le power statut du rnode (remote node) soit le power statut du passive server/syno HA.&#13;
+&#13;
+Renvoit 1 si le Power statut est normal</description>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+                <item>
+                    <name>Status of passive (rnode) syno HA</name>
+                    <type>10</type>
+                    <snmp_community/>
+                    <multiplier>0</multiplier>
+                    <snmp_oid/>
+                    <key>syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;]</key>
+                    <delay>43200</delay>
+                    <history>1</history>
+                    <trends>365</trends>
+                    <status>0</status>
+                    <value_type>3</value_type>
+                    <allowed_hosts/>
+                    <units/>
+                    <delta>0</delta>
+                    <snmpv3_contextname/>
+                    <snmpv3_securityname/>
+                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase/>
+                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase/>
+                    <formula>1</formula>
+                    <delay_flex/>
+                    <params/>
+                    <ipmi_sensor/>
+                    <data_type>0</data_type>
+                    <authtype>0</authtype>
+                    <username/>
+                    <password/>
+                    <publickey/>
+                    <privatekey/>
+                    <port/>
+                    <description>Récupère le statut du rnode (remote node) soit le statut du passive server/syno HA.&#13;
+&#13;
+Renvoit 1 si le statut est normal</description>
+                    <inventory_link>0</inventory_link>
+                    <applications/>
+                    <valuemap/>
+                    <logtimefmt/>
+                </item>
+            </items>
+            <discovery_rules/>
+            <macros>
+                <macro>
+                    <macro>{$ADMIN_PASS}</macro>
+                    <value/>
+                </macro>
+                <macro>
+                    <macro>{$ADMIN_VIP}</macro>
+                    <value/>
+                </macro>
+            </macros>
+            <templates/>
+            <screens/>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rdisk_status_normal.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(0)} &lt; {OS - Synology - HA passive server:syno_monitor_rdisk_count.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(0)}</expression>
+            <name>At least one physical disk is not in normal status on the passive syno HA</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>Si le nombre de disk physiques en statut normal est inférieur au nombre du disk physiques c'est qu'au moins un des disques n'est pas en statut normal donc on déclenche une alerte</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(,57600)}#1</expression>
+            <name>Passive (rnode) syno HA is not in normal status</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(,57600)}#1</expression>
+            <name>Power status of Passive (rnode) syno HA is not in normal state</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(57600)}=1</expression>
+            <name>Power status of passive (rnode) syno HA [No Data]</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(57600)}=1</expression>
+            <name>Status of passive (rnode) syno HA [No Data]</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description/>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rdisk_status_normal.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(1200)}=1</expression>
+            <name>[No Data] Number of physical disks in normal status on passive syno HA</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>L'item &quot;Number of physical disks in normal status on passive syno HA&quot; ne renvoit aucune valeur</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+        <trigger>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rdisk_count.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(57600)}=1</expression>
+            <name>[No Data] Number of physical disks on passive syno HA</name>
+            <url/>
+            <status>0</status>
+            <priority>3</priority>
+            <description>L'item &quot;Number of physical disks on passive syno HA&quot; ne renvoit aucune valeur</description>
+            <type>0</type>
+            <dependencies/>
+        </trigger>
+    </triggers>
+</zabbix_export>
