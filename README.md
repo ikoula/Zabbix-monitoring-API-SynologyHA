@@ -9,7 +9,7 @@ Dans un context Synology HA, il n'est en effet plus possible d'accéder au passi
 
 Les scripts syno_monitor_rdisk_count.sh; syno_monitor_rdisk_status_normal.sh; syno_monitor_rnode_power_status.sh; syno_monitor_rnode_status.sh sont les scripts exécutés via les items Zabbix external checks par le zabbix_proxy ou zabbix_server monitorant le NAS Synology HA.
 
-REMARQUE: Il est important de monitorer le reste des éléments de vos Synology par d'autres méthodes (ex: https://share.zabbix.com/storage-devices/synology/synology-dsm-5), ces scripts ne monitorant QUE ce qu'il ne l'est pas autrement que par l'API (ni SSH, ni SNMP, etc.).
+REMARQUE: Il est important de monitorer le reste des éléments de vos Synology par d'autres méthodes (ex: https://share.zabbix.com/storage-devices/synology/synology-dsm-5), ces scripts ne monitorant QUE ce qu'il ne l'est pas autrement que par l'API (ni SSH, ni SNMP, etc.), ils viennent donc compléter un monitoring existant.
 
 Pour utiliser ces scripts en context monitoring Zabbix vous devez :
 -----------------------------------------------------------
