@@ -19,3 +19,4 @@ Pour utiliser ces scripts en context monitoring Zabbix vous devez :
 - Créer des items external checks faisant appel aux scripts .sh avec comme premier paramètre la VIP du cluster Synology HA et comme second paramètre le mot de passe de l'utilisateur admin DSM Synology.
 - Importer le template Zabbix zbx_synologyHA_passive-server.xml.
 - Paramétrer les macros Zabbix {$ADMIN_VIP} et {$ADMIN_PASS} (utilisés par les external scripts pour se connecter à l'API DSM Synology) sur l'hôte Synology sur lequel vous avez ajouté ce template.
+- Adapter les paramètres des items (ex: interval d'update) en fonction de vos besoins
