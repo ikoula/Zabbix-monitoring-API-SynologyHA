@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2017-04-10T09:57:34Z</date>
+    <date>2017-04-11T13:29:22Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -64,7 +64,7 @@
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>syno_monitor_rdisk_count.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;]</key>
-                    <delay>43200</delay>
+                    <delay>3600</delay>
                     <history>1</history>
                     <trends>365</trends>
                     <status>0</status>
@@ -103,7 +103,7 @@
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;]</key>
-                    <delay>43200</delay>
+                    <delay>3600</delay>
                     <history>1</history>
                     <trends>365</trends>
                     <status>0</status>
@@ -144,7 +144,7 @@ Renvoit 1 si le Power statut est normal</description>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;]</key>
-                    <delay>43200</delay>
+                    <delay>3600</delay>
                     <history>1</history>
                     <trends>365</trends>
                     <status>0</status>
@@ -206,7 +206,7 @@ Renvoit 1 si le statut est normal</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(,57600)}#1</expression>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(0)}#1</expression>
             <name>Passive (rnode) syno HA is not in normal status</name>
             <url/>
             <status>0</status>
@@ -216,7 +216,7 @@ Renvoit 1 si le statut est normal</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(,57600)}#1</expression>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].last(0)}#1</expression>
             <name>Power status of Passive (rnode) syno HA is not in normal state</name>
             <url/>
             <status>0</status>
@@ -226,7 +226,7 @@ Renvoit 1 si le statut est normal</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(57600)}=1</expression>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_power_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(7200)}=1</expression>
             <name>Power status of passive (rnode) syno HA [No Data]</name>
             <url/>
             <status>0</status>
@@ -236,7 +236,7 @@ Renvoit 1 si le statut est normal</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(57600)}=1</expression>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rnode_status.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(7200)}=1</expression>
             <name>Status of passive (rnode) syno HA [No Data]</name>
             <url/>
             <status>0</status>
@@ -246,7 +246,7 @@ Renvoit 1 si le statut est normal</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{OS - Synology - HA passive server:syno_monitor_rdisk_status_normal.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(1200)}=1</expression>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rdisk_status_normal.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(1800)}=1</expression>
             <name>[No Data] Number of physical disks in normal status on passive syno HA</name>
             <url/>
             <status>0</status>
@@ -256,7 +256,7 @@ Renvoit 1 si le statut est normal</description>
             <dependencies/>
         </trigger>
         <trigger>
-            <expression>{OS - Synology - HA passive server:syno_monitor_rdisk_count.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(57600)}=1</expression>
+            <expression>{OS - Synology - HA passive server:syno_monitor_rdisk_count.sh[&quot;{$ADMIN_VIP}&quot;,&quot;{$ADMIN_PASS}&quot;].nodata(7200)}=1</expression>
             <name>[No Data] Number of physical disks on passive syno HA</name>
             <url/>
             <status>0</status>
