@@ -44,9 +44,9 @@ else
         // Authentification successful
         $sid = $obj->data->sid;
 
-	//Get SYNO Core SHA Panel Disk
-	$json = file_get_contents($server.'/webapi/query.cgi?api=SYNO.API.Info&method=query&version=1&query=SYNO.Core.SHA.Panel.Disk',false, stream_context_create($arrContextOptions));
-	$obj = json_decode($json);
+        //Get SYNO Core SHA Panel Disk
+        $json = file_get_contents($server.'/webapi/query.cgi?api=SYNO.API.Info&method=query&version=1&query=SYNO.Core.SHA.Panel.Disk',false, stream_context_create($arrContextOptions));
+        $obj = json_decode($json);
 
         // Verify object
         if(!$obj->success)
@@ -56,44 +56,50 @@ else
         }
         else
         {
-		//Get SYNO Core SHA Panel Disk
-		$path = $obj->data->{'SYNO.Core.SHA.Panel.Disk'}->path;
-		$json = file_get_contents($server.'/webapi/'.$path.'?api=SYNO.Core.SHA.Panel.Disk&version='.$vApi.'&method=load&_sid='.$sid,false, stream_context_create($arrContextOptions));
-		$obj = json_decode($json);
-		
-		// Verify object
+                //Get SYNO Core SHA Panel Disk
+                $path = $obj->data->{'SYNO.Core.SHA.Panel.Disk'}->path;
+                $json = file_get_contents($server.'/webapi/'.$path.'?api=SYNO.Core.SHA.Panel.Disk&version='.$vApi.'&method=load&_sid='.$sid,false, stream_context_create($arrContextOptions));
+                $obj = json_decode($json);
+
+                // Verify object
                 if(!$obj->success)
-                {
-                        // Error detected => retry once
-                        $scriptName = "/usr/bin/php ".$_SERVER["SCRIPT_NAME"]." ".$ip." ".$pass;
-                        exec($scriptName, $output);
-                        echo $output[0]."\n";
-                        exit;
+        {
+                // Error detected => retry once
+                $scriptName = "/usr/bin/php ".$_SERVER["SCRIPT_NAME"]." ".$ip." ".$pass;
+                exec($scriptName, $output);
+
+                                // Verify if array
+                                if(!empty($output) && is_array($output) && count($output) > 0)
+                                        echo implode("\n", $output)."\n";
+                                else
+                                        echo "unknown_status\n";
+                exit;
+        }
+        else
+        {
+            // Verify status
+                        if(!empty($obj->data->rnode_disk) && is_array($obj->data->rnode_disk))
+                        {
+                                foreach($obj->data->rnode_disk as $rdisk)
+                                        echo $rdisk->dev .":". $rdisk->status ."\n";
+
+                                exit;
+                        }
+                        else
+                        {
+                                echo "unknown_status\n";
+                                exit;
+                        }
                 }
-                else
-                {
-                        // Verify status
-			if(!empty($obj->data->rnode_disk) && is_array($obj->data->rnode_disk))
-			{
-				foreach($obj->data->rnode_disk as $rdisk){
-	    				if(!empty($rdisk_dev = $rdisk->dev) && !empty($rdisk_status = $rdisk->status))
-					echo "". $rdisk_dev .":". $rdisk_status ."\n";
-				}
-			}
-			else
-			{
-				echo "unknown_status\n";
-				exit;
-			}
-		}
-	}
+        }
 }
+
 //Get SYNO.API.Auth Path (recommended by Synology for further update)
 $json = file_get_contents($server.'/webapi/query.cgi?api=SYNO.API.Info&method=Query&version=1&query=SYNO.API.Auth',false, stream_context_create($arrContextOptions));
 $obj = json_decode($json);
 $path = $obj->data->{'SYNO.API.Auth'}->path;
-        
-//Logout and destroying SID
+
+// Logout and destroying SID
 $json = file_get_contents($server.'/webapi/'.$path.'?api=SYNO.API.Auth&method=Logout&version='.$vAuth.'&session=SurveillanceStation&_sid='.$sid,false, stream_context_create($arrContextOptions));
 $obj = json_decode($json);
 
